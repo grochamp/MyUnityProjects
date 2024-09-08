@@ -27,6 +27,8 @@ public class HeroKnight : MonoBehaviour {
     private float               m_rollCurrentTime;
 
 
+    public bool canMove = true;
+
     // Use this for initialization
     void Start ()
     {
@@ -66,7 +68,7 @@ public class HeroKnight : MonoBehaviour {
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
         }
-
+    if (canMove){
         // -- Handle input and movement --
         float inputX = Input.GetAxis("Horizontal");
 
@@ -161,7 +163,7 @@ public class HeroKnight : MonoBehaviour {
             // Reset timer
             m_delayToIdle = 0.05f;
             m_animator.SetInteger("AnimState", 1);
-        }
+        }}
 
         //Idle
         else
